@@ -1,0 +1,11 @@
+<nav *ngIf="isConnected()">
+    <ul>
+        <li><a (click)="reroute('home')">Accueil</a></li>
+        <li><a (click)="reroute('members')">Liste de membre</a></li>
+        <li><a (click)="logout()">Logout</a></li>
+    </ul>
+</nav>
+<header>
+    <h1>Angular routeur</h1>
+</header>
+<router-outlet></router-outlet>
