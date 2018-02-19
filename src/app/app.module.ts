@@ -4,7 +4,7 @@ import {AppComponent} from './app.component';
 import {FormsModule} from "@angular/forms";
 import {routing} from "./routing.module";
 import {HomeComponent} from "./home/home.component";
-import {MembersComponent} from "./members/members.component";
+import {ProductsComponent} from "./products/products.component";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {AuthenticationService} from "./auth/auth.service";
 import {AuthGuard} from "./auth/auth-guard";
@@ -19,7 +19,7 @@ import {AuthGuard} from "./auth/auth-guard";
     declarations: [
         AppComponent,
         HomeComponent,
-        MembersComponent],
+        ProductsComponent],
     providers: [
       AuthenticationService,
         AuthGuard

@@ -19,7 +19,7 @@ export class AppComponent {
 
     reroute(newRoute: string) {
         if (newRoute == "home") this.router.navigateByUrl('/', { skipLocationChange: false });
-        if (newRoute == "members") this.router.navigateByUrl('/members', { skipLocationChange: false });
+        if (newRoute == "products") this.router.navigateByUrl('/products', { skipLocationChange: false });
     }
 
     isConnected(){

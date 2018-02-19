@@ -1,3 +1,3 @@
 export {Token} from "./Token";
-export { Members } from "./Members";
+export { Products } from "./Products";
 export { Users } from "./Users";
