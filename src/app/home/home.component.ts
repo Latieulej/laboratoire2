@@ -21,7 +21,7 @@ export class HomeComponent {
     }
 
     getHome() : string {
-        return "Login";
+        return "Catalogue";
     }
 
     isNotConnected(){

@@ -1,10 +1,87 @@
 <main>
-    <h2>{{ getHome() }}</h2>
-    <div *ngIf="isNotConnected()">
-        <label>Nom d'utilisateur</label>
-        <input name="username" type="text" placeholder="Username" [(ngModel)]="model.username" />
-        <label>Mot de passe</label>
-        <input name="password" type="password" placeholder="Password" [(ngModel)]="model.password" />
-        <button (click)="login()" class="btn btn-go">Go!</button>
-    </div>
+    
+   
+    <body>
+        <header>
+            <div>
+                <nav class="navbar navbar-default ">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="index.html" style="font-family:Cookie, cursive;font-size:41px;">
+                                <h2>{{ getHome() }}</h2>
+                            </a>
+                            <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div class="collapse navbar-collapse" id="navcol-1">
+                            <ul class="nav navbar-nav">
+                                <li role="presentation">
+                                    <a href="cart.html">
+                                        Panier <i class="glyphicon glyphicon-shopping-cart"></i>
+                                    </a>
+                                </li>
+                            </ul>
+            
+                        </div>
+                        <div class="navbar-right" *ngIf="isNotConnected()">
+                            <label>Nom d'utilisateur</label>
+                            <input name="username" type="text" placeholder="Username" [(ngModel)]="model.username" />
+                            <label>Mot de passe</label>
+                            <input name="password" type="password" placeholder="Password" [(ngModel)]="model.password" />
+                            <button (click)="login()" class="btn btn-go">Go!</button>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+    
+ 
+    
+        <footer>
+            <div class="row">
+                <div class="col-md-4 col-sm-6 footer-navigation">
+                    <h3>
+                        <a href="#" style="font-family:ABeeZee, sans-serif;">E-Commerce </a>
+                    </h3>
+                    <p class="links">
+                        <a href="#">Accueil</a>
+                        <strong> · </strong>
+                        <a href="cart.html">Panier</a>
+                        <strong> · </strong>
+                        <a href="login.html">Connexion</a>
+                    </p>
+                    <p class="company-name">E-Commerce © 2018 </p>
+                </div>
+                <div class="col-md-4 col-sm-6 footer-contacts">
+                    <div>
+                        <span class="fa fa-map-marker footer-contacts-icon"> </span>
+                        <p>
+                            <span class="new-line-span">UQAC </span> Quebec , Canada</p>
+                    </div>
+                    <div>
+                        <i class="fa fa-phone footer-contacts-icon"></i>
+                        <p class="footer-center-info email text-left"> +1 418 000 0000</p>
+                    </div>
+                    <div>
+                        <i class="fa fa-envelope footer-contacts-icon"></i>
+                        <p>
+                            <a href="#" target="_blank">catalogue@helloworld.com</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="clearfix visible-sm-block"></div>
+                <div class="col-md-4 footer-about">
+                    <h4>Catalogue en ligne</h4>
+                    <p> Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula
+                        sit amet. </p>
+                    <div class="social-links social-icons"></div>
+                </div>
+            </div>
+        </footer>
+        
+    </body>
 </main>

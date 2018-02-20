@@ -9,7 +9,6 @@ import {CartComponent} from "./cart/cart.component";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {AuthenticationService} from "./auth/auth.service";
 import {AuthGuard} from "./auth/auth-guard";
-
 @NgModule({
     imports: [
         BrowserModule,
@@ -29,5 +28,6 @@ import {AuthGuard} from "./auth/auth-guard";
     ],
     bootstrap: [AppComponent]
 })
+
 export class AppModule {
 }
