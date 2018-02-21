@@ -1,9 +1,22 @@
+h1{
+    font-family:Arial;
+}
 nav{
-    display:inline-block;
+    
+    background-color:grey;
+    padding:20px,0px,20px,0px;
+}
+nav ul{
+    display:flex;
+    vertical-align: middle;
+
+}
+
+li{
+    list-style: none;
+    margin-right:50px;
 }
 li a{
     text-decoration:none;
 }
-form{
-    display:inline;
-}
+
