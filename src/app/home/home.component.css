@@ -1,22 +1,8 @@
-/*h1{
-    font-family:Arial;
-}
-nav{
-    
-    background-color:grey;
-    padding:20px,0px,20px,0px;
-}
-nav ul{
-    display:flex;
-    vertical-align: middle;
-
+.form-group label {
+    color: #fff ;
+    padding-right: 10px;
 }
 
-li{
-    list-style: none;
-    margin-right:50px;
+.form-group #username {
+    margin-right: 20px;
 }
-li a{
-    text-decoration:none;
-}
-
