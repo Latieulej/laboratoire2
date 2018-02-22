@@ -1,12 +1,10 @@
 <nav *ngIf="isConnected()">
     <ul>
-        <li><a (click)="reroute('home')">Accueil</a></li>
+        <li><h1><a (click)="reroute('home')">Catalogue</a></h1></li>
         <li><a (click)="reroute('products')">Liste des produits</a></li>
         <li><a (click)="reroute('cart')">Panier</a></li>
         <li><a (click)="logout()">Logout</a></li>
     </ul>
 </nav>
-<header>
-    <h1>Angular routeur</h1>
-</header>
+
 <router-outlet></router-outlet>

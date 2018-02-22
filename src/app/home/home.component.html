@@ -1,46 +1,54 @@
 <main>
-    
-   
-    <body>
-        <header>
-            <div>
-                <nav class="navbar navbar-default ">
-                    <div class="container">
-                        <div class="navbar-header">
-                            <a class="navbar-brand" href="index.html" style="font-family:Cookie, cursive;font-size:41px;">
-                                <h2>{{ getHome() }}</h2>
-                            </a>
-                            <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                        </div>
-                        <div class="collapse navbar-collapse" id="navcol-1">
-                            <ul class="nav navbar-nav">
+        <header *ngIf="isNotConnected()">
+                    <nav class="navbar">
+            
+                            <ul>
+                               <li> <a  href="index.html" style="font-family:Cookie, cursive;font-size:41px;">
+                                    <h1>Catalogue</h1>
+                                </a></li>
                                 <li role="presentation">
+<<<<<<< HEAD
                                     <a href="cart">
                                         Panier <i class="glyphicon glyphicon-shopping-cart"></i>
+=======
+                                    <a href="cart.html">
+                                        Panier 
+>>>>>>> 61f3061c6f50975bafaa4b1edd45b3e318cb16f1
                                     </a>
                                 </li>
+                              
+                                <li>
+                                    <label>Nom d'utilisateur</label>
+                                    <input name="username" type="text" placeholder="Username" [(ngModel)]="model.username" />
+                                    <label>Mot de passe</label>
+                                    <input name="password" type="password" placeholder="Password" [(ngModel)]="model.password" />
+                                    <button (click)="login()" class="btn btn-go">Go!</button>
+                                </li>
                             </ul>
-            
-                        </div>
-                        <div class="navbar-right" *ngIf="isNotConnected()">
-                            <label>Nom d'utilisateur</label>
-                            <input name="username" type="text" placeholder="Username" [(ngModel)]="model.username" />
-                            <label>Mot de passe</label>
-                            <input name="password" type="password" placeholder="Password" [(ngModel)]="model.password" />
-                            <button (click)="login()" class="btn btn-go">Go!</button>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-        </header>
-    
- 
-    
+                        </nav>          
+                    
+            </header>
+            <section>
+                    <table>
+                            <thead>
+                                <tr>
+                                    <th>Nom</th>
+                                    <th>Image</th>
+                                    <th>Description</th>
+                                    <th>Prix</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let p of products; let i=index">
+                                    <td> {{ p.nom }}</td>
+                                    <td><img src="{{ p.name }}" /></td>
+                                    <td>{{ p.description }}</td>
+                                    <td>{{ p.prix}} $</td>
+                                </tr>
+                            </tbody>
+                        </table>
+            </section>
+       
         <footer>
             <div class="row">
                 <div class="col-md-4 col-sm-6 footer-navigation">
@@ -83,5 +91,4 @@
             </div>
         </footer>
         
-    </body>
 </main>

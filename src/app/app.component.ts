@@ -26,6 +26,9 @@ export class AppComponent {
     isConnected(){
         return this.authGuard.isConnected();
     }
+    isNotConnected(){
+        return !this.authGuard.isConnected();
+    }
 
     logout(){
         this.authService.logout();

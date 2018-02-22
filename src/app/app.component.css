@@ -2,6 +2,23 @@ main {
     background-color: black;
     color: whitesmoke;
 }
-.myClass {
-    color:red
+h1{
+    font-family:Arial;
+}
+nav{
+    
+    background-color:grey;
+    padding: 20px, 0, 20px, 0;
+}
+nav ul{
+    display:flex;
+    vertical-align: middle;
+
+}
+li{
+    list-style: none;
+    margin-right:50px;
+}
+li a{
+    text-decoration:none;
 }
