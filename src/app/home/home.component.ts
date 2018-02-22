@@ -23,6 +23,11 @@ export class HomeComponent {
             new Products(2,"Télévision","img2.jpg","Écran plasma acheté en 2003",150)
         ];
 
+    reroute(newRoute: string) {
+        if (newRoute == "home") this.router.navigateByUrl('/', { skipLocationChange: false });
+        if (newRoute == "cart") this.router.navigateByUrl('/cart', { skipLocationChange: false });
+    }
+
     login() {
         console.log(this.model);
         this.authenticationService.login(this.model);
