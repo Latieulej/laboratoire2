@@ -2,24 +2,25 @@ import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent} from './app.component';
 import {FormsModule} from "@angular/forms";
-import {routing} from "./routing.module";
+import {AppRoutingModule} from "./routing.module";
 import {HomeComponent} from "./home/home.component";
-import {ProductsComponent} from "./products/products.component";
 import {CartComponent} from "./cart/cart.component";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {ProductsRoutingModule} from "./products/products.routing.module";
+import {ProductsModule} from "./products/products.module";
 import {AuthenticationService} from "./auth/auth.service";
 import {AuthGuard} from "./auth/auth-guard";
 @NgModule({
     imports: [
         BrowserModule,
         FormsModule,
-        routing,
+        ProductsModule,
+        AppRoutingModule,
         BrowserAnimationsModule
     ],
     declarations: [
         AppComponent,
         HomeComponent,
-        ProductsComponent,
         CartComponent
     ],
     providers: [

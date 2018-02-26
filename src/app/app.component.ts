@@ -20,14 +20,11 @@ export class AppComponent {
     reroute(newRoute: string) {
         if (newRoute == "home") this.router.navigateByUrl('/', { skipLocationChange: false });
         if (newRoute == "products") this.router.navigateByUrl('/products', { skipLocationChange: false });
-        if (newRoute == "cart") this.router.navigateByUrl('/cart', { skipLocationChange: false });
+        if (newRoute == "create") this.router.navigateByUrl('/create', { skipLocationChange: false });
     }
 
     isConnected(){
         return this.authGuard.isConnected();
-    }
-    isNotConnected(){
-        return !this.authGuard.isConnected();
     }
 
     logout(){
