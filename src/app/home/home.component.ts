@@ -3,7 +3,7 @@ import {AuthenticationService} from "../auth/auth.service";
 import {Router} from "@angular/router";
 import {Users} from "../models/Users";
 import {AuthGuard} from "../auth/auth-guard";
-import { Products } from "../models/Models";
+import { Products, Cart } from "../models/Models";
 //import { ProductsComponent } from "../products/products.component";
 
 @Component({
@@ -36,6 +36,7 @@ export class HomeComponent {
     getHome() : string {
         return "Catalogue";
     }
+
     isNotConnected(){
         return !this.authGuard.isConnected();
     }
