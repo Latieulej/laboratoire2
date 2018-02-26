@@ -7,5 +7,6 @@ import {Products} from "../../models/Models";
     styleUrls: [ './products-create.component.css' ]
 })
 export class ProductsCreateComponent {
+    
 
 }
