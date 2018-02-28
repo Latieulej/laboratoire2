@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Cart } from "../models/Cart";
 
 @Component({
-    selector: 'app-products',
+    selector: 'app-cart',
     templateUrl: './cart.component.html',
     styleUrls: ['./cart.component.css']
 })

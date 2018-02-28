@@ -7,17 +7,18 @@ import {NgModule} from "@angular/core";
 const routes: Routes = [
     {
         path: 'products',
-        component: ProductsComponent
-    },
-    {
-        path: 'create',
-        component: ProductsCreateComponent
-    },
-    {
-        path: ':id',
-        component: ProductsDetailsComponent
+        component: ProductsComponent,
+        children: [ 
+            {
+                path: 'create',
+                component: ProductsCreateComponent
+            },
+            {
+                path: ':id',
+                component: ProductsDetailsComponent
+            }
+    ]
     }
-
 ];
 @NgModule({
     imports: [

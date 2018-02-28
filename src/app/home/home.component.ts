@@ -4,7 +4,7 @@ import {Router} from "@angular/router";
 import {Users} from "../models/Users";
 import {AuthGuard} from "../auth/auth-guard";
 import { Products, Cart } from "../models/Models";
-//import { ProductsComponent } from "../products/products.component";
+import { ProductsComponent } from "../products/products.component";
 
 @Component({
     selector : 'app-home',
@@ -14,7 +14,7 @@ import { Products, Cart } from "../models/Models";
 
 
 export class HomeComponent {
-    private model: Users = {username: '', password: ''};
+    public model: Users = {username: '', password: ''};
 
     constructor(private router: Router, private authenticationService: AuthenticationService, private authGuard: AuthGuard){
         }
@@ -28,15 +28,8 @@ export class HomeComponent {
         if (newRoute == "cart") this.router.navigateByUrl('/cart', { skipLocationChange: false });
     }
 
-    login() {
-        console.log(this.model);
-        this.authenticationService.login(this.model);
-    }
 
-    getHome() : string {
-        return "Catalogue";
-    }
-
+   
     isNotConnected(){
         return !this.authGuard.isConnected();
     }
