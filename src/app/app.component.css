@@ -1,7 +1,18 @@
-main {
-    background-color: black;
-    color: whitesmoke;
+.form-group label {
+    color: #fff;
+    padding-right: 10px;
 }
-h1{
-    font-family:Arial;
+
+.form-group #username {
+    margin-right: 20px;
+}
+
+footer ul {
+    color: #149c82;
+    font-size: 1.2em;
+    margin-left: 25px;
+}
+
+footer .footer-contacts ul {
+    list-style: none;
 }
