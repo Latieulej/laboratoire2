@@ -4,15 +4,19 @@
         <thead>
             <th>Photo</th>
             <th>Nom</th>
-            <th>Prix</th>
+            <th>Quantité</th>
+            <th>Prix unitaire</th>
+            <th>Prix total</th>
         </thead>
         <tbody>
-            <tr *ngFor="let p of products; let i=index">
+            <tr *ngFor="let p of cart; let i=index">
                 <td> {{ p.photo }}</td>
                 <td>
                     {{ p.nom }}
                 </td>
+                <td> {{ p.quantite }}</td>
                 <td>{{ p.prix }} $</td>
+                <td></td>
             </tr>
         </tbody>
     </table>

@@ -17,20 +17,42 @@ export class HomeComponent {
     public model: Users = {username: '', password: ''};
 
     constructor(private router: Router, private authenticationService: AuthenticationService, private authGuard: AuthGuard){
-        }
-        private products: Products[] = [
-            new Products(1,"Ordinateur portable","img1.jpg","Ordinateur de la marque Asus, quasiment neuf, excellent état.",500),
-            new Products(2,"Télévision","img2.jpg","Écran plasma acheté en 2003",150)
-        ];
+        
+    }  
+
+    private products: Products[] = JSON.parse(localStorage.getItem('products')) ;
 
     reroute(newRoute: string) {
         if (newRoute == "home") this.router.navigateByUrl('/', { skipLocationChange: false });
         if (newRoute == "cart") this.router.navigateByUrl('/cart', { skipLocationChange: false });
     }
-
-
    
     isNotConnected(){
         return !this.authGuard.isConnected();
+    }
+
+    addToCart(produit : Products) {
+        // Si cart n'existe pas dans le localStorage on le crée et on ajoute le produit
+        // sinon (s'il existe) on rajoute le produit au tableau
+        /*if (!localStorage.getItem('cart')) {
+            let cart : number[] = [produit.id] ;
+            localStorage.setItem('cart', JSON.stringify(cart)) ;
+        } else {
+            let cart : number[] = JSON.parse(localStorage.getItem('cart')) ;
+            cart.push(produit.id) ;  
+            localStorage.setItem('cart',JSON.stringify(cart)) ;
+        }*/
+
+        if (!localStorage.getItem('cart')) {
+            let cart : Cart[] = [
+                new Cart(produit.nom,produit.photo,produit.prix,1)
+            ] ;
+            localStorage.setItem('cart', JSON.stringify(cart)) ;
+        } else {
+            let cart : Cart[] = JSON.parse(localStorage.getItem('cart')) ; // Récupère les données 
+            let p : Cart = new Cart(produit.nom, produit.photo, produit.prix, 1) ; // Crée une nouvelle donnée
+            cart.push(p) ; // L'ajoute au tableau
+            localStorage.setItem('cart', JSON.stringify(cart)); // L'ajoute au localStorage
+        }
     }
 }

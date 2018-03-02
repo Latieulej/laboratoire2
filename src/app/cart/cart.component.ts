@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Cart } from "../models/Cart";
+import { Products} from "../models/Products" ;
 
 @Component({
     selector: 'app-cart',
@@ -7,7 +8,7 @@ import { Cart } from "../models/Cart";
     styleUrls: ['./cart.component.css']
 })
 export class CartComponent {
-    private products: Cart[] = [
-        new Cart('Ordinateur portable','',500,2) 
-    ];
+    
+    private cart: Cart[] = JSON.parse(localStorage.getItem('cart')); 
+  
 }
