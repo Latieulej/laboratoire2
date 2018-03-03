@@ -11,23 +11,18 @@ import { Cart } from "../../models/Cart" ;
 export class ProductsDetailsComponent {
     private model: Products;
 
-    private products: Products[] = JSON.parse(localStorage.getItem('products'));
+    public products: Products[] = JSON.parse(localStorage.getItem('products'));
 
     constructor(private route: ActivatedRoute){
-        let myId="";
+        let myId;
         this.route.params.subscribe(params => {
            myId = params["id"];
         });
-        switch (myId){
-            case "1":
-                this.model = this.products[0];
-                break;
-            case "2":
-                this.model = this.products[1];
-                break;
-            case "3":
-                this.model = this.products[2];
-                break;
+
+        for(let i = 0 ; i < this.products.length; i++) {
+            if (myId == this.products[i].id) {
+                this.model = this.products[i] ;
+            }
         }
     }
 
