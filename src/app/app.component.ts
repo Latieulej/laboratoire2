@@ -38,13 +38,15 @@ export class AppComponent {
         this.authenticationService.logout();
         window.location.reload();
     }
-
+    private products: Products[] = JSON.parse(localStorage.getItem('cproducts')) ;
     setData() {
         // Permet de stocker les produits dans le localStorage afin d'y accéder partout sur le site
         let products: Products[] = [
             new Products(1, "Ordinateur portable", "src/assets/images/ordinateur.jpg", "Ordinateur de la marque Asus, quasiment neuf, excellent état.", 500),
             new Products(2, "Télévision", "src/assets/images/television.jpg", "Écran plasma acheté en 2003", 150)
         ];
+        let c: Products = new Products(cproduit.id, cproduit.nom, produit.photo, produit.prix, 1) ;
+        products.push(c) ; // L'Ajoute au tableau
 
         localStorage.setItem('products', JSON.stringify(products));
     }
