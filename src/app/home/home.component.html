@@ -16,7 +16,7 @@
                         </div>
                         <div class="col-md-6">
                             <p>{{ p.description }}</p>
-                            <a href="#" class="btn btn-info">Fiche produit</a>
+                            <a [routerLink]="p.id" class="btn btn-info">Fiche produit</a>
                             <button class="btn btn-primary" (click)="addToCart(p)" >Ajouter au panier <i class="fa fa-cart-plus"></i></button>
                         </div>
                         
