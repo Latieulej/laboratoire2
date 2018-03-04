@@ -36,24 +36,29 @@ export class ProductsDetailsComponent {
                 new Cart(produit.id, produit.nom, produit.photo, produit.prix, 1)
             ];
             localStorage.setItem('cart', JSON.stringify(cart));
+            localStorage.setItem('totalCart', JSON.stringify(produit.prix));
         } else {
             let cart: Cart[] = JSON.parse(localStorage.getItem('cart')); // Récupère les données
+            let total: number = JSON.parse(localStorage.getItem('totalCart')); //Récupère le total du panier
 
             // On vérifie si déjà dans le panier si oui on modifie la quantité et on retourne true
             let exist: boolean = false;
             for (let i = 0; i < cart.length; i++) {
                 if (cart[i].pId == produit.id) {
                     cart[i].quantite += 1;
+                    total += cart[i].prix; // Ajoute le prix au total
                     exist = true;
                 }
             }
 
             if (!exist) { // Si le produit n'existe pas
                 let p: Cart = new Cart(produit.id, produit.nom, produit.photo, produit.prix, 1);
+                total += p.prix; // Ajoute le prix au total
                 cart.push(p); // L'Ajoute au tableau
             }
 
             localStorage.setItem('cart', JSON.stringify(cart)); // L'ajoute au localStorage
+            localStorage.setItem('totalCart', JSON.stringify(total)); // Ajout du total au localStorage
         }
     }
 }
