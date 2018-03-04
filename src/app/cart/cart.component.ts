@@ -11,4 +11,7 @@ export class CartComponent {
     
     private cart: Cart[] = JSON.parse(localStorage.getItem('cart')); 
   
+    getTotal() {
+        return JSON.parse(localStorage.getItem('totalCart')) ;
+    }
 }
