@@ -10,7 +10,7 @@
         </thead>
         <tbody>
             <tr *ngFor="let p of cart; let i=index">
-                <td> {{ p.photo }}</td>
+                <td><img [src]="p.photo" /></td>
                 <td>
                     {{ p.nom }}
                 </td>
@@ -19,5 +19,8 @@
                 <td>{{ p.prix * p.quantite }} $</td>
             </tr>
         </tbody>
+        <tfoot class="text-right">
+            <b>Total du panier :</b> {{getTotal() }} $
+        </tfoot>
     </table>
 </main>
