@@ -19,7 +19,9 @@
 
 </main> -->
 <main>
-<form class="form-horizontal">
+
+<div ng-controller="products-create.component">
+<form class="form-horizontal" ng-app="myApp">
         <fieldset>
           <legend>Ajout d'un produit</legend>
           <div class="form-group">
@@ -50,7 +52,7 @@
 
           <div class="form-group">
             <div class="col-lg-10 col-lg-offset-2">
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" ng-click='getForm()' class="btn btn-primary">Submit</button>
             </div>
           </div>
         </fieldset>

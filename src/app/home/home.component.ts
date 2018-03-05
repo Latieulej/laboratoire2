@@ -26,7 +26,9 @@ export class HomeComponent {
         if (newRoute == "home") this.router.navigateByUrl('/', { skipLocationChange: false });
         if (newRoute == "cart") this.router.navigateByUrl('/cart', { skipLocationChange: false });
     }
-   
+    isConnected(){
+        return this.authGuard.isConnected();
+    }
     isNotConnected(){
         return !this.authGuard.isConnected();
     }
