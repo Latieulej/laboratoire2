@@ -8,4 +8,13 @@ import { Products } from "../models/Models";
 })
 export class ProductsComponent {
     private products: Products[] = JSON.parse(localStorage.getItem('products'));
+    
+    jQuery(){
+    $('#remove').click(function(){
+        localStorage.removeItem('products');
+        
+    })
+
+    }
+    
 }

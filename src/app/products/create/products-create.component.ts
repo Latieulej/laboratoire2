@@ -25,6 +25,6 @@ getForm(products:Products){
       
     //products.push(products)
      // L'Ajoute au tableau
-    localStorage.setItem('products', JSON.stringify(product));
+    localStorage.setItem('products', JSON.stringify(products));
         
     } }    
